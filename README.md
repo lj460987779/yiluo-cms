@@ -50,9 +50,9 @@ The scheme as a set of multi-function background frame templates, suitable for m
 
 ## Installation steps ##
 
-	git clone https://github.com/lin-xin/manage-system.git		// Clone templates
-	cd manage-system											// Enter template directory
-	npm install													// Installation dependency
+	git clone https://github.com/lin-xin/manage-system.git      // Clone templates
+	cd manage-system      // Enter template directory
+	npm install      // Installation dependency
 
 ## Local development ##
 
@@ -74,40 +74,40 @@ A Vue.js server side component to create dynamic tables. Github : [vue-datasourc
 
 ```JavaScript
 <template>
-	<div>
-		<datasource language="en" :table-data="information.data"
-	        :columns="columns"
-	        :pagination="information.pagination"
-	        :actions="actions"
-	        v-on:change="changePage"
-	        v-on:searching="onSearch"></datasource>
-	</div>
+  <div>
+    <datasource language="en" :table-data="information.data"
+      :columns="columns"
+      :pagination="information.pagination"
+      :actions="actions"
+      v-on:change="changePage"
+      v-on:searching="onSearch">
+    </datasource>
+  </div>
 </template>
 
 <script>
-	import Datasource from 'vue-datasource';        // import Datasource component
-    export default {
-        data: function(){
-            return {
-                information: {
-	                pagination: {...},              // pagination config
-	                data: [...]
-	            },
-	            columns: [...],                     // col config
-	            actions: [...]                      // function config
-            }
+import Datasource from 'vue-datasource';      // import Datasource component
+  export default {
+    data: function(){
+      return {
+        information: {
+          pagination: {...},                // pagination config
+          data: [...]
         },
-        components: {
-            Datasource										
-        },
-	    methods: {
-	        changePage(values) {...},
-	        onSearch(searchQuery) {...}
-	    }
+        columns: [...],                     // col config
+        actions: [...]                      // function config
+      }
+    },
+    components: {
+      Datasource										
+    },
+    methods: {
+      changePage(values) {...},
+      onSearch(searchQuery) {...}
+    }
 	}
 </script>
 ```
-
 
 ### Vue-Quill-Editor ###
 Quill editor component for Vue2. Github : [vue-quill-editor](https://github.com/surmon-china/vue-quill-editor)
@@ -121,18 +121,18 @@ Quill editor component for Vue2. Github : [vue-quill-editor](https://github.com/
 
 <script>
 	import { quillEditor } from 'vue-quill-editor';     // import quillEditor component
-    export default {
-        data: function(){
-            return {
-                content: '',								
-                editorOption: {								
-                    // something config
-                }
-            }
-        },
-        components: {
-            quillEditor										
+  export default {
+    data: function(){
+      return {
+        content: '',								
+        editorOption: {								
+          // something config
         }
+      }
+    },
+    components: {
+      quillEditor										
+    }
 	}
 </script>
 ```
@@ -142,31 +142,31 @@ Markdown Editor component for Vue.js. Github : [Vue-SimpleMDE](https://github.co
 
 ```JavaScript
 <template>
-    <div>
-        <markdown-editor v-model="content" :configs="configs" ref="markdownEditor"></markdown-editor>
-    </div>
+  <div>
+    <markdown-editor v-model="content" :configs="configs" ref="markdownEditor"></markdown-editor>
+  </div>
 </template>
 
 <script>
-    import { markdownEditor } from 'vue-simplemde';			
-    export default {
-        data: function(){
-            return {
-                content:'',									
-                configs: {									
-                    status: false,							
-                    initialValue: 'Hello BBK',				
-                    renderingConfig: {
-                        codeSyntaxHighlighting: true,		
-                        highlightingTheme: 'atom-one-light' 
-                    }
-                }
-            }
-        },
-        components: {
-            markdownEditor									
+  import { markdownEditor } from 'vue-simplemde';			
+  export default {
+    data: function(){
+      return {
+        content:'',									
+        configs: {									
+          status: false,							
+          initialValue: 'Hello BBK',				
+          renderingConfig: {
+            codeSyntaxHighlighting: true,		
+            highlightingTheme: 'atom-one-light' 
+          }
         }
+      }
+    },
+    components: {
+      markdownEditor									
     }
+  }
 </script>
 ```
 
@@ -174,81 +174,79 @@ Markdown Editor component for Vue.js. Github : [Vue-SimpleMDE](https://github.co
 a vue plugin for image upload and crop. Github : [Vue-Core-Image-Upload](https://github.com/Vanthink-UED/vue-core-image-upload)
 
 ```JavaScript
-
 <template>
-    <div>
+  <div>
 		<img :src="src">									
-        <vue-core-image-upload :class="['pure-button','pure-button-primary','js-btn-crop']"
-           :crop="true"										
-           text="上传图片"
-           url=""											
-           extensions="png,gif,jpeg,jpg"					
-           @:imageuploaded="imageuploaded">					
+    <vue-core-image-upload :class="['pure-button','pure-button-primary','js-btn-crop']"
+      :crop="true"										
+      text="上传图片"
+      url=""											
+      extensions="png,gif,jpeg,jpg"					
+      @:imageuploaded="imageuploaded">					
 		</vue-core-image-upload>
-    </div>
+  </div>
 </template>
 
 <script>
-    import VueCoreImageUpload  from 'vue-core-image-upload';	
-    export default {
-        data: function(){
-            return {
-                src:'../img/1.jpg'							
-            }
-        },
-        components: {
-            VueCoreImageUpload								
-        },
-        methods:{
-            imageuploaded(res) {							
-                console.log(res)
-            }
-        }
+  import VueCoreImageUpload  from 'vue-core-image-upload';	
+  export default {
+    data: function(){
+      return {
+        src:'../img/1.jpg'							
+      }
+    },
+    components: {
+      VueCoreImageUpload								
+    },
+    methods:{
+      imageuploaded(res) {							
+        console.log(res)
+      }
     }
+  }
 </script>
 
 ```
 
 ### vue-schart ###
 Vue.js wrapper for sChart.js. Github : [vue-schart](https://github.com/linxin/vue-schart)
-
 ```JavaScript
 <template>
-    <div>
-        <schart :canvasId="canvasId"
-				:type="type"
-				:width="width"
-				:height="height"
-				:data="data"
-				:options="options"
-		></schart>
-    </div>
+  <div>
+    <schart :canvasId="canvasId"
+      :type="type"
+      :width="width"
+      :height="height"
+      :data="data"
+      :options="options">
+    </schart>
+  </div>
 </template>
 	
 <script>
-    import Schart from 'vue-schart';
-    export default {
-        data: function(){
-            return {
-                canvasId: 'myCanvas',
-                type: 'bar',
-                width: 500,
-                height: 400,
-                data: [
-                    {name: '2014', value: 1342},
-                    {name: '2015', value: 2123},
-                    {name: '2016', value: 1654},
-                    {name: '2017', value: 1795},
-                ],
-                options: {
-                    title: 'Total sales of stores in recent years'
-                }
-            }
-        },
-        components: {
-            Schart
+  import Schart from 'vue-schart';
+  export default {
+    data: function(){
+      return {
+        canvasId: 'myCanvas',
+        type: 'bar',
+        width: 500,
+        height: 400,
+        data: [
+          {name: '2014', value: 1342},
+          {name: '2015', value: 2123},
+          {name: '2016', value: 1654},
+          {name: '2017', value: 1795},
+        ],
+        options: {
+          title: 'Total sales of stores in recent years'
         }
+      }
+    },
+    components: {
+      Schart
     }
+  }
 </script>
 ```
 
@@ -261,8 +259,8 @@ The first step to remove the component of the routing. Enter 'src/router/index.j
 
 ```JavaScript
 {
-    path: '/vuetable',
-    component: resolve => require(['../components/page/VueTable.vue'], resolve)
+  path: '/vuetable',
+  component: resolve => require(['../components/page/VueTable.vue'], resolve)
 },
 ```
 
@@ -276,7 +274,7 @@ The third step is to delete the entry. Enter 'src/components/common/Sidebar.vue'
 
 Finally, uninstall this component.
 	
-	npm un vue-datasource -S
+npm un vue-datasource -S
 
 Complete!
 
